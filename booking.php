@@ -1,12 +1,16 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<link rel="stylesheet" type="text/css" href="signup.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <title> RENT BD </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="table.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -14,7 +18,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">House Rental Management System</a>
+      <a class="navbar-brand" href="#"> RENT BD </a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -39,64 +43,39 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
 
-         
+         <li><a href="#"><span class="glyphicon glyphicon-user"></span>Hi <?php session_start();echo $_SESSION['uname'];?></a>
+         </li>
         <li><a href="index.html"><span class="glyphicon glyphicon-user"></span> Sign Out</a></li>
       </ul>
     </div>
   </div>
 </nav>
+
   
-<center>
-<br>
-<div class="card" style="width: 43rem;border-radius: 35px;background-color:#f0f5f5">
-<br>
- <div class="card-body">
-<h1 class="card-title" style="text-align:center"><B>Add House</B></h1><br>
-<form name="Form2" action="addhouse.php" method="get" enctype="multipart/form-data">
-
-<table>
-	<tr>
-		<td><b>Owner ID: </b></td>
-		<td> <input type=number name="o" value="" size=25></td>
-	</tr>
-	<tr>
-		<td><b>No of Rooms: </b></td>
-		<td> <input type=number name="n" value="" size=25></td>
-	</tr>
-	<tr>
-		<td><b>Rate: </b></td>
-		<td> <input type=number name="ra" value="" size=35></td>
-	</tr>
-	<tr>
-		<td><b>Upload Pics: </b></td>
-		<td> <input type=file name="u" value="" size=25 accept="image/*"></td>
-	</tr>
-	<tr>
-		<td><b>Country: </b></td>
-		<td> <input type=textbox name="c" value="" size=25></td>
-	</tr>
-	<tr>
-		<td><b>State: </b></td>
-		<td> <input type=textbox name="s" value="" size=25></td>
-	</tr>
-	<tr>
-		<td><b>City: </b></td>
-		<td> <input type=textbox name="city" value="" size=25></td>
-	</tr>
-	<tr>
-		<td><b>Address: </b></td>
-		<td> <input type=textbox name="a" value="" size=25></td>
-	</tr>
-	<tr>
-		<td><b>Description: </b></td>
-		<td> <input type=textbox name="de" value="" size=25></td>
-	</tr>
-</table>
+<div class="container">
+<a href="dobooking.html" class='btn btn-primary'>Book House</a>
 <br><br>
-<input type=submit value="Add" class="btn btn-danger" name="submit">
-</form><br></div>
+  <table border="1" id="customers">
+    <tr>
+      <th>Tenant ID</th>
+      <th>House ID</th>
+      <th>Booking Date</th>
+      <th>Period</th>
+      <th>Price</th>
+      
+    </tr>
+<?php
+include("connection.php");
+$query="select * from booking";
+$data=mysqli_query($conn,$query);
+while($result=mysqli_fetch_assoc($data))
+{
+ echo "<tr><td>".$result['t_id']."</td><td>".$result['h_id']."</td><td>".$result['booking_date']."</td><td>".$result['period']."</td><td>".$result['price']."</td><td>";
+ echo "<a href='v.php?tid=".$result['t_id']."&hid=".$result['h_id']."'>View File</a>";
+ echo "</td></tr>";
+}
+echo "</table>";
+?>
 </div>
-
 </body>
-
 </html>
