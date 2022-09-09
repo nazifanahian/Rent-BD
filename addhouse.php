@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("connection.php");
+$ownerid=$_GET["o"];
 $nrooms=$_GET['n'];
 $rate=$_GET['ra'];
 $pics=$_GET['u'];
