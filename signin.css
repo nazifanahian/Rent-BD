@@ -1,7 +1,7 @@
 body{
 	margin: 0 auto;
 	
-	background:url("h5.jpg");
+	background:url(img/h8.jpg);
 	background-size: 100% ;
 }
 .container
@@ -43,10 +43,10 @@ input[type="text"]{
 .form-input:nth-child(2)::before{
 	content: "\f023";
 }
- 
+
 #a
 {
 	position: fixed;
 	top: 55%;
-	left: 10%;
+	left: 0%;
 }
