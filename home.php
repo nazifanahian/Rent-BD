@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title> RENT BD </title>
+  <title>RENT BD</title>
   <meta charset="utf-8">
  <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="style1.css">
@@ -20,7 +20,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"> RENT BD </a>
+      <a class="navbar-brand" href="#">RENT BD</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -29,7 +29,7 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Houses <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="houses.php">Houses</a></li>
-            <li><a href="rating.php">Rating</a></li>
+            
           </ul>
         </li>
 

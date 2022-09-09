@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title> RENT BD </title>
+  <title>RENT BD</title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="table.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +18,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#"> RENT BD </a>
+      <a class="navbar-brand" href="#">RENT BD</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -27,7 +27,7 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Houses <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="houses.php">Houses</a></li>
-            <li><a href="rating.php">Rating</a></li>
+            
           </ul>
         </li>
 
@@ -36,7 +36,7 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Tenants<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="tenant.php">Tenants</a></li>
-            <li><a href="members.php">Members</a></li>
+            
           </ul></li>
         <li><a href="booking.php">Booking</a></li>
         
@@ -60,7 +60,6 @@
       <th>Tenant ID</th>
       <th>House ID</th>
       <th>Booking Date</th>
-      <th>Period</th>
       <th>Price</th>
       
     </tr>
@@ -70,9 +69,9 @@ $query="select * from booking";
 $data=mysqli_query($conn,$query);
 while($result=mysqli_fetch_assoc($data))
 {
- echo "<tr><td>".$result['t_id']."</td><td>".$result['h_id']."</td><td>".$result['booking_date']."</td><td>".$result['period']."</td><td>".$result['price']."</td><td>";
- echo "<a href='v.php?tid=".$result['t_id']."&hid=".$result['h_id']."'>View File</a>";
- echo "</td></tr>";
+ echo "<tr><td>".$result['t_id']."</td><td>".$result['h_id']."</td><td>".$result['booking_date']."</td><td>".$result['price']."</td><td>";
+ 
+ 
 }
 echo "</table>";
 ?>
